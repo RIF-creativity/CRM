@@ -1,11 +1,20 @@
+<?php include 'admin/pages/admin/layout/navbar.php'; ?>
+<?php include 'admin/pages/admin/layout/sidebar.php'; ?>
+<?php 
+if (!isset($_SESSION['login'])) {
+    header("Location: index.php");
+    exit();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabel Admin</title>
+    <title>Tabel Pelanggan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="admin/css/style.css">
 
     <style>
         .container {
@@ -18,15 +27,15 @@
         }
 
         .table {
-            background-color: #cfe2ff
+            background-color: #cfe2ff;
         }
 
         .table thead tr {
-            border-bottom: 2px solid #c4d7f4
+            border-bottom: 2px solid #c4d7f4;
         }
 
         .table tbody tr {
-            border-bottom: 2px solid #c4d7f4
+            border-bottom: 2px solid #c4d7f4;
         }
 
         #search {
@@ -34,10 +43,6 @@
         }
 
         #filter {
-            height: 35px;
-        }
-
-        #addAdminBtn {
             height: 35px;
         }
 
@@ -55,7 +60,7 @@
 <body>
     <div class="container mt-4">
         <div class="row">
-            <h1>Admin <span class="p">jumlah</span></h1>
+            <h1>Pelanggan <span class="p">jumlah</span></h1>
         </div>
     </div>
     <div class="container">
@@ -71,9 +76,6 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-success" id="addAdminBtn">Tambah Admin</button>
                     </div>
                     <div class="col-md-3">
                         <form class="form-inline">
@@ -93,8 +95,9 @@
                             <tr>
                                 <th scope="col"><center>Nomor</center></th>
                                 <th scope="col"><center>Nama</center></th>
-                                <th scope="col"><center>Jabatan</center></th>
-                                <th scope="col"><center>Password</center></th>
+                                <th scope="col"><center>Alamat</center></th>
+                                <th scope="col"><center>Royalitas</center></th>
+                                <th scope="col"><center>Menu</center></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -103,51 +106,93 @@
                                 <td><center></center></td>
                                 <td><center></center></td>
                                 <td><center></center></td>
-                                <td><center></center></td>
+                                <td>
+                                    <center>
+                                        <a href="whatsapp://send?phone=PHONE_NUMBER_1" class="btn btn-success btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                        <a href="edit_customer.php?id=1" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                        <a href="view_customer.php?id=1" class="btn btn-info btn-sm"><i class="fas fa-eye"></i> View</a>
+                                    </center>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row"><center>2</center></th>
                                 <td><center></center></td>
                                 <td><center></center></td>
                                 <td><center></center></td>
-                                <td><center></center></td>
+                                <td>
+                                    <center>
+                                        <a href="whatsapp://send?phone=PHONE_NUMBER_2" class="btn btn-success btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                        <a href="edit_customer.php?id=2" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                        <a href="view_customer.php?id=2" class="btn btn-info btn-sm"><i class="fas fa-eye"></i> View</a>
+                                    </center>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row"><center>3</center></th>
                                 <td><center></center></td>
                                 <td><center></center></td>
                                 <td><center></center></td>
-                                <td><center></center></td>
+                                <td>
+                                    <center>
+                                        <a href="whatsapp://send?phone=PHONE_NUMBER_3" class="btn btn-success btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                        <a href="edit_customer.php?id=2" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                        <a href="view_customer.php?id=2" class="btn btn-info btn-sm"><i class="fas fa-eye"></i> View</a>
+                                    </center>
+                                </td> 
                             </tr>
                             <tr>
                                 <th scope="row"><center>4</center></th>
                                 <td><center></center></td>
                                 <td><center></center></td>
                                 <td><center></center></td>
-                                <td><center></center></td>
+                                <td>
+                                    <center>
+                                        <a href="whatsapp://send?phone=PHONE_NUMBER_4" class="btn btn-success btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                        <a href="edit_customer.php?id=2" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                        <a href="view_customer.php?id=2" class="btn btn-info btn-sm"><i class="fas fa-eye"></i> View</a>
+                                    </center>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row"><center>5</center></th>
                                 <td><center></center></td>
                                 <td><center></center></td>
                                 <td><center></center></td>
-                                <td><center></center></td>
+                                <td>
+                                    <center>
+                                        <a href="whatsapp://send?phone=PHONE_NUMBER_5" class="btn btn-success btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                        <a href="edit_customer.php?id=2" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                        <a href="view_customer.php?id=2" class="btn btn-info btn-sm"><i class="fas fa-eye"></i> View</a>
+                                    </center>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row"><center>6</center></th>
                                 <td><center></center></td>
                                 <td><center></center></td>
                                 <td><center></center></td>
-                                <td><center></center></td>
+                                <td>
+                                    <center>
+                                        <a href="whatsapp://send?phone=PHONE_NUMBER_6" class="btn btn-success btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                        <a href="edit_customer.php?id=2" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                        <a href="view_customer.php?id=2" class="btn btn-info btn-sm"><i class="fas fa-eye"></i> View</a>
+                                    </center>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row"><center>7</center></th>
                                 <td><center></center></td>
                                 <td><center></center></td>
                                 <td><center></center></td>
-                                <td><center></center></td>
+                                <td>
+                                    <center>
+                                        <a href="whatsapp://send?phone=PHONE_NUMBER_7" class="btn btn-success btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                        <a href="edit_customer.php?id=2" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                        <a href="view_customer.php?id=2" class="btn btn-info btn-sm"><i class="fas fa-eye"></i> View</a>
+                                    </center>
+                                </td>
                             </tr>
-                            <!-- Add more admin rows as needed -->
+                            <!-- Add more customer rows as needed -->
                         </tbody>
                     </table>
                 </div>
