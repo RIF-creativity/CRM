@@ -1,0 +1,256 @@
+/* CSS UNTUK DASHBOARD */
+
+/* header desktop */
+.navbar {
+  background-color: #0d6efd !important;
+  height: 60px;
+}
+
+.navbar-brand {
+  color: #dfe5e9 !important;
+  font-size: 22px;
+}
+
+.navbar-nav .nav-link i {
+  color: #95bdfe !important;
+  font-size: 20px;
+}
+
+/* header mobile */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+  }
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box {
+  background-color: #0d6efd;
+  color: white;
+  width: 16%;
+  height: 160px;
+  border: 1px solid #0d6efd;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.box p {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 42px;
+}
+
+.pelanggan-box {
+  width: 100%;
+  height: 140px;
+}
+
+.deal-box {
+  width: 100%;
+  height: 140px;
+}
+
+.loss-box {
+  width: 100%;
+  height: 140px;
+}
+
+.winrate-box {
+  width: 100%;
+  height: 140px;
+}
+
+.total-penjualan-box {
+  width: 100%;
+  height: 225px;
+  border: none;
+  margin-top: 0;
+  font-size: 26px;
+  background-color: #b2d2ff;
+  color: black;
+}
+
+.total-penjualan-box p {
+  margin-top: 14px;
+  font-size: 62px;
+}
+
+.total-penjualan-box a {
+  font-size: 16px;
+}
+
+.pie-chart-container {
+  flex: 1;
+  width: 85%;
+  height: 225px;
+}
+
+.target-box {
+  width: 100%;
+  height: 105px;
+  background-color: #b2d2ff;
+  margin-top: 10px;
+}
+
+.target-container {
+  width: 100%;
+  height: 35px;
+  background-color: #0d6efd;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profit-box {
+  width: 100%;
+  height: 105px;
+  background-color: #b2d2ff;
+  margin-top: 10px;
+}
+
+.profit-container {
+  width: 100%;
+  height: 35px;
+  background-color: #0d6efd;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tugas-box {
+  width: 100%;
+  height: 220px;
+  background-color: #b2d2ff;
+  margin-top: 10px;
+}
+
+.tugas-container {
+  width: 100%;
+  height: 50px;
+  background-color: #0d6efd;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line-chart-container {
+  margin-top: 10px;
+  flex: 1;
+}
+
+.table-container {
+  margin-top: 15px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+/* CSS UNTUK SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left:-100%;
+  height: 100vh;
+  width: 250px;
+  transition: left 0.3s;
+}
+
+.sidebar .close-button {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.sidebar .profile-picture {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.sidebar .profile-name {
+  text-align: center;
+}
+
+.sidebar .nav-item a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .nav-item a i {
+  margin-right: 10px;
+}
+text detail pelanggan .detail-pelanggan-title {
+  margin-bottom: 10px;
+}
+
+.detail-pelanggan-title .h2 {
+  font-size: 30px;
+}
+
+/* container utama */
+.container {
+  width: 850px;
+}
+
+/* icon profile */
+.fa-2x {
+  color: #d581a2;
+  font-size: 11em;
+  margin-left: 25px;
+}
+
+/* details form */
+.col-details {
+  margin-left: -150px;
+}
+
+.col-details .row {
+  font-size: 16px;
+}
+
+/* text riwayat transaksi */
+p {
+  font-size: 18px;
+  margin-top: 15px;
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+/* table */
+.table-container {
+  margin-left: 30px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.table {
+  background-color: #cfe2ff;
+}
+
+.table thead tr {
+  border-bottom: 2px solid #c4d7f4;
+}
+
+.table tbody tr {
+  border-bottom: 2px solid #c4d7f4;
+}
