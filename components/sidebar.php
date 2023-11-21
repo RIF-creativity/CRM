@@ -1,11 +1,5 @@
-<?php 
-if (!isset($_SESSION['login'])) {
-    header("Location: index.php");
-    exit();
-?>
-<!DOCTYPE html>
 <body>
-    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+    <div id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
         <div class="position-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -64,16 +58,6 @@ if (!isset($_SESSION['login'])) {
                 </li>
             </ul>
         </div>
-    </nav>
-    <script>
-        //Skrip untuk membuka dan menutup Sidebar
-        function openSidebar() {
-            document.getElementById("sidebar").style.right = "0";
-        }
+    </div>
 
-        function closeSidebar() {
-            document.getElementById("sidebar").style.right = "100%";
-        }
-    </script>
 </body>
-</html>

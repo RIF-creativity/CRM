@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <body>
-    <header class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container w-100">
             <a class="navbar-brand" href="#">CRM</a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -21,6 +20,5 @@
                 </li>
             </ul>
         </div>
-    </header>
+    </div>
 </body>
-</html>
