@@ -76,3 +76,61 @@ var myPieChart = new Chart(ctx, {
         }
     }
 });
+$(document).ready(function () {
+    // Add an event listener to the category filter
+    $('#categoryFilter').change(function () {
+        filterTable();
+    });
+
+    // Add an event listener to the search input
+    $('#search').keyup(function () {
+        filterTable();
+    });
+
+    function filterTable() {
+        var categoryFilter = $('#categoryFilter').val().toLowerCase();
+        var searchTerm = $('#search').val().toLowerCase();
+
+        // Loop through each row in the table
+        $('tbody tr').each(function () {
+            var rowCategory = $(this).find('td:eq(2)').text().toLowerCase(); // Assuming category is in the third column
+
+            // Check if the row matches the filter and search criteria
+            if ((categoryFilter === '' || rowCategory === categoryFilter) &&
+                ($(this).text().toLowerCase().indexOf(searchTerm) !== -1)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+});
+$(document).ready(function () {
+    // Add an event listener to the category filter
+    $('#categoryFilter').change(function () {
+        filterTable();
+    });
+
+    // Add an event listener to the search input
+    $('#search').keyup(function () {
+        filterTable();
+    });
+
+    function filterTable() {
+        var categoryFilter = $('#categoryFilter').val().toLowerCase();
+        var searchTerm = $('#search').val().toLowerCase();
+
+        // Loop through each row in the table
+        $('tbody tr').each(function () {
+            var rowCategory = $(this).find('td:eq(2)').text().toLowerCase(); // Assuming category is in the third column
+
+            // Check if the row matches the filter and search criteria
+            if ((categoryFilter === '' || rowCategory === categoryFilter) &&
+                ($(this).text().toLowerCase().indexOf(searchTerm) !== -1)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+});

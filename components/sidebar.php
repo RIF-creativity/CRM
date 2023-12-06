@@ -12,22 +12,22 @@
                     <h5>Nama</h5>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="dashboard.php">
                         <i class="fas fa-tachometer-alt"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="tblproduk.php">
                         <i class="fas fa-box-open"></i> Produk
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="tblpelanggan.php">
                         <i class="fas fa-users"></i> Pelanggan
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="tbltransaksi.php">
                         <i class="fas fa-money-bill-wave"></i> Transaksi
                     </a>
                 </li>
@@ -37,12 +37,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="tblpesan.php">
                         <i class="fas fa-envelope"></i> Pesan
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="tblaktivitas.php">
                         <i class="fas fa-chart-line"></i> Aktivitas
                     </a>
                 </li>
@@ -52,7 +52,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="tbladmin.php">
                         <i class="fas fa-user-cog"></i> Admin
                     </a>
                 </li>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contoh Pie Chart dengan Chart.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="styleindext.css">
+    <link rel="stylesheet" type="text/css" href="text.css">
+</head>
+
+<body>
+    <div class="garis-panjang">
+        <p> CRM </p>
+    </div>
+    <div class="loyalitas">
+        <p>  Loyalitas Pelanggan</p>
+    </div>
+    <div class="a"></div>
+    <div class="diagram">
+        <canvas id="myPieChart"></canvas>
+    </div>
+    <div class="b">
+       <div class="reguler"> <P> Reguler<br> 0 </P></div>
+    </div>
+    <div class="c"></div>
+    <div class="d"></div>
+    <div class="e"></div>
+    <div class="f"></div>
+    <div class="g"></div>
+    <div class="h">
+        <img src="foto/Reguler.jpg" />
+    </div>
+    <div class="i">
+        <img src="foto/Reguler.jpg" />
+    </div>
+    <div class="j">
+        <img src="foto/Reguler.jpg" />
+    </div>
+    <div class="k">
+        <img src="foto/Reguler.jpg" />
+    </div>
+    <div class="l">
+        <img src="foto/Reguler.jpg" />
+    </div>
+    <script>
+        // Data yang akan digunakan untuk pie chart
+        var data = {
+            labels: ["A", "B", "C", "D", "E"],
+            datasets: [{
+                data: [20, 30, 10, 15, 25],
+                backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF"]
+            }]
+        };
+
+        var ctx = document.getElementById("myPieChart").getContext('2d');
+
+        // Membuat pie chart
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: data
+        });
+    </script>
+</body>
+
+</html>
