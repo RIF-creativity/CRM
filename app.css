@@ -113,19 +113,53 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
 
 .tugas-box {
   width: 100%;
   height: 200px;
+=======
+.profit-box {
+  width: 100%;
+  height: 105px;
+  background-color: #b2d2ff;
+  margin-top: 10px;
+}
+
+.profit-container {
+  width: 100%;
+  height: 35px;
+  background-color: #0d6efd;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tugas-box {
+  width: 100%;
+  height: 220px;
+>>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
   background-color: #b2d2ff;
   margin-top: 10px;
 }
 
 .tugas-container {
+<<<<<<< HEAD
+=======
+  width: 100%;
+>>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
   height: 50px;
   background-color: #0d6efd;
   color: white;
   text-align: center;
+<<<<<<< HEAD
+=======
+  display: flex;
+  justify-content: center;
+  align-items: center;
+>>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
 }
 
 .line-chart-container {
@@ -143,7 +177,11 @@
 .sidebar {
   position: fixed;
   top: 0;
+<<<<<<< HEAD
   left: -100%;
+=======
+  left:-100%;
+>>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
   height: 100vh;
   width: 250px;
   transition: left 0.3s;
@@ -178,7 +216,10 @@
 .sidebar .nav-item a i {
   margin-right: 10px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
 text detail pelanggan .detail-pelanggan-title {
   margin-bottom: 10px;
 }
@@ -234,6 +275,7 @@ p {
 .table tbody tr {
   border-bottom: 2px solid #c4d7f4;
 }
+<<<<<<< HEAD
 
 .container {
   width: 850px;
@@ -263,3 +305,5 @@ p {
 #filter {
   height: 35px;
 }
+=======
+>>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449

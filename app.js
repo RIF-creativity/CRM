@@ -75,6 +75,7 @@ var myPieChart = new Chart(ctx, {
             }
         }
     }
+<<<<<<< HEAD
 });
 $(document).ready(function () {
     // Add an event listener to the category filter
@@ -133,4 +134,6 @@ $(document).ready(function () {
             }
         });
     }
+=======
+>>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
 });
