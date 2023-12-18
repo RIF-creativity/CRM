@@ -43,5 +43,6 @@ function Email($email, $pengirim, $penerima, $judul, $pesan)
 
     $mail->send();
     return (1);
+    header("Location: " . $_SERVER['REQUEST_URI']);
     exit;
 }

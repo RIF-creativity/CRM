@@ -113,53 +113,19 @@
   align-items: center;
 }
 
-<<<<<<< HEAD
 
 .tugas-box {
   width: 100%;
   height: 200px;
-=======
-.profit-box {
-  width: 100%;
-  height: 105px;
-  background-color: #b2d2ff;
-  margin-top: 10px;
-}
-
-.profit-container {
-  width: 100%;
-  height: 35px;
-  background-color: #0d6efd;
-  color: white;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.tugas-box {
-  width: 100%;
-  height: 220px;
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
   background-color: #b2d2ff;
   margin-top: 10px;
 }
 
 .tugas-container {
-<<<<<<< HEAD
-=======
-  width: 100%;
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
   height: 50px;
   background-color: #0d6efd;
   color: white;
   text-align: center;
-<<<<<<< HEAD
-=======
-  display: flex;
-  justify-content: center;
-  align-items: center;
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
 }
 
 .line-chart-container {
@@ -177,11 +143,7 @@
 .sidebar {
   position: fixed;
   top: 0;
-<<<<<<< HEAD
   left: -100%;
-=======
-  left:-100%;
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
   height: 100vh;
   width: 250px;
   transition: left 0.3s;
@@ -216,10 +178,7 @@
 .sidebar .nav-item a i {
   margin-right: 10px;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
 text detail pelanggan .detail-pelanggan-title {
   margin-bottom: 10px;
 }
@@ -258,52 +217,74 @@ p {
 }
 
 /* table */
-.table-container {
-  margin-left: 30px;
-  max-height: 300px;
-  overflow-y: scroll;
-}
-
-.table {
-  background-color: #cfe2ff;
-}
-
-.table thead tr {
-  border-bottom: 2px solid #c4d7f4;
-}
-
-.table tbody tr {
-  border-bottom: 2px solid #c4d7f4;
-}
-<<<<<<< HEAD
-
-.container {
-  width: 850px;
-}
-
-.table-container {
-  max-height: 300px;
-  overflow-y: scroll;
-}
-
-.table {
-  background-color: #cfe2ff
-}
-
-.table thead tr {
-  border-bottom: 2px solid #c4d7f4
-}
-
-.table tbody tr {
-  border-bottom: 2px solid #c4d7f4
-}
-
 #search {
   height: 35px;
 }
 
 #filter {
   height: 35px;
+  width: 20px;
 }
-=======
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
+
+/* CSS UNTUK NOTIFIKASI */
+
+
+#notification-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  border-radius: 3%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.container-fluid {
+  background-color: #0d6efd;
+  color: #f4f4f8;
+  padding: 6px;
+  text-align: center;
+  height: 50px;
+}
+
+.notification,
+.notification-1 {
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #ffff;
+  width: 285px;
+  max-height: 100px;
+  overflow: auto;
+}
+
+.notification,
+.notification-1:hover {
+  cursor: pointer;
+}
+
+.notification,
+.notification-1 a {
+  text-decoration: none;
+}
+
+.notification-1 {
+  background-color: rgba(176, 199, 221, 0.568);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+.icon i {
+  color: #ffffff;
+}
+
+.notification-content {
+  flex-grow: 1;
+}

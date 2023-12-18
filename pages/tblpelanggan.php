@@ -1,110 +1,163 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "crm"); //koneksi ke database
-$result = mysqli_query($conn, "SELECT * FROM user"); //koneksi ke tabel
+$page = 'tblpelanggan';
+include '../components/header.php';
+include '../email/index.php';
+$U = mysqli_query($conn, "SELECT * FROM user"); //koneksi ke tabel
+$CU = mysqli_query($conn, "SELECT COUNT(nama) as total FROM user");
+
+if (isset($_GET['CP'])) {
+    $data = $_GET['CP'];
+    $U = mysqli_query($conn, "SELECT * FROM user where nama LIKE '%$data%' or id LIKE '%$data%'");
+}
+$jumlah = mysqli_fetch_assoc($CU);
+
+if (isset($_POST['kirim_email'])) {
+    $email = $_POST['email'];
+    $penerima = $_POST['penerima'];
+    $pengirim = 'rif-creativity@gmail.com';
+    $judul = $_POST['judul'];
+    $pesan = $_POST['pesan'];
+    if (Email($email, $pengirim, $penerima, $judul, $pesan) > 0) {
+        echo
+        "<script>
+            window.location='tblpelanggan.php?msg=1';
+        </script>
+        ";
+    }
+}
+
+if (isset($_GET['msg'])) {
+    echo "<body onload=\"
+                    Swal.fire({
+                        title: 'Email terkirim',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });\">
+                </body>";
+}
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabel Pelanggan</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="../app.css">
-</head>
+<div class="container-fluid bg-white text-dark text-start p-5">
+    <div class="row">
+        <div class="col-sm-6 col-md-8">
+            <h1>Pelanggan <span class="text-muted fs-6">jumlah : <?= $jumlah['total']; ?> akun</span></h1>
+            <div>
+                <form method="get">
+                    <div class=" form-group d-flex flex-row-reverse">
+                        <div class="input-group w-50 me-3">
+                            <input type="text" class="form-control" id="search" placeholder="cari pelanggan" name="CP">
+                            <button class=" input-group-text" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <button class="input-group-text me-2">
+                            <i class="fa-solid fa-users"></i>
+                        </button>
+                    </div>
+                </form>
 
-<body>
-    <?php include '../components/navbar.php'; ?>
-    <?php include '../components/sidebar.php'; ?>
-    <label for="nama">nama</label>
-    <!-- $_POST['nama'] -->
-    <input type="text" name="nama" id="nama">
-    <div class="container mt-4">
-        <div class="row">
-            <h1>Pelanggan <span class="p">jumlah</span></h1>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="d-flex justify-content-between">
-                    <div class="col-md-7">
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="search" placeholder="">
-                                    <span class="input-group-text"><i class="fas fa-search"></i></span>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-3">
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <select class="form-control" id="filter">
-                                    <option value="">Filter</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                </div>
             </div>
-            <div class="col-md-12 mt-3">
-                <div class="table-container">
-                    <table class="table">
-                        <thead>
+            <div class=" table-container" style="max-height: 68vh;">
+                <table class="table">
+                    <thead>
+                        <tr class="table-primary">
+                            <th scope="col">
+                                <center>No</center>
+                            </th>
+                            <th scope="col">
+                                <center>Nama</center>
+                            </th>
+                            <th scope="col">
+                                <center>Alamat</center>
+                            </th>
+                            <th scope="col">
+                                <center>Royalitas</center>
+                            </th>
+                            <th scope="col">
+                                <center>Menu</center>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $i = 1;
+                        foreach ($U as $row) : ?>
                             <tr>
-                                <th scope="col">
-                                    <center>Nomor</center>
+                                <th scope="row">
+                                    <center><?= $i; ?></center>
                                 </th>
-                                <th scope="col">
-                                    <center>Nama</center>
-                                </th>
-                                <th scope="col">
-                                    <center>Alamat</center>
-                                </th>
-                                <th scope="col">
-                                    <center>Royalitas</center>
-                                </th>
-                                <th scope="col">
-                                    <center>Menu</center>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($result as $row) : ?>
-                                <tr>
-                                    <th scope="row">
-                                        <center><?= $row['id']; ?></center>
-                                    </th>
-                                    <td>
-                                        <center><?= $row['nama']; ?></center>
-                                    </td>
-                                    <td>
-                                        <center><?= $row['alamat']; ?></center>
-                                    </td>
-                                    <td>
-                                        <center><?= $row['level']; ?></center>
-                                    </td>
-                                    <td>
-                                        <center>
+                                <td>
+                                    <center><?= $row['nama']; ?></center>
+                                </td>
+                                <td>
+                                    <center><?= $row['alamat']; ?></center>
+                                </td>
+                                <td>
+                                    <center><?= $row['level']; ?></center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <p class="d-inline-flex gap-1">
                                             <a href="https://wa.me/083896059029" class="btn btn-success btn-sm"><i class="fab fa-whatsapp"></i></a>
-                                            <a href="edit_customer.php?id=2" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                            <a href="view_customer.php?id=2" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
-                                        </center>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
+                                            <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#email<?= $i; ?>" aria-expanded="false" aria-controls="email<?= $i; ?>">
+                                                <i class="fa-solid fa-envelope"></i>
+                                            </button>
+                                            <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample<?= $i; ?>" aria-expanded="false" aria-controls="multiCollapseExample<?= $i; ?>">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </p>
+                                    </center>
+                                </td>
+                            </tr>
+                        <?php
+                            $i++;
+                        endforeach; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
-    <script src="../app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
-</body>
+        <div class="col-6 col-md-4">
+            <!--tolong desaint bagin ini -->
+            <?php
+            $i = 1;
+            foreach ($U as $row) : ?>
+                <!--kirim email-->
+                <div class="collapse multi-collapse" id="email<?= $i; ?>">
+                    <div class="card card-body">
+                        <form method="post">
+                            <label for="penerima">penerima</label>
+                            <input type="text" name="penerima" id="penerima" value="<?= $row['nama']; ?>" readonly><br>
+                            <label for="email">email</label>
+                            <input type="text" name="email" id="email" value="<?= $row['email']; ?>" readonly><br>
+                            <label for="judul">judul</label>
+                            <input type="text" name="judul" id="judul"><br>
+                            <label for="pesan">pesan</label>
+                            <textarea name="pesan" id="pesan" cols="30" rows="10"></textarea><br>
+                            <button type="submit" name="kirim_email">kirim</button>
+                        </form>
+                    </div>
+                </div>
 
-</html>
+                <!--detail pelanggan -->
+                <div class="collapse multi-collapse" id="multiCollapseExample<?= $i; ?>">
+                    <div class="card card-body">
+                        <?= $row['id']; ?>
+                        <img src="../Db/img/<?= $row['gambar']; ?>" alt="">
+
+                        <?= $row['nama']; ?>
+                        <?= $row['level']; ?>
+                        <?= $row['preferensi']; ?>
+                        <?= $row['alamat']; ?>
+                        <?= $row['email']; ?>
+                        <?= $row['no_wa']; ?>
+                        <?= $row['point']; ?>
+                    </div>
+                </div>
+            <?php
+                $i++;
+            endforeach; ?>
+        </div>
+        <!-- sampai sini aja -->
+    </div>
+</div>
+<?php include '../components/footer.php' ?>

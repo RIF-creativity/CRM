@@ -17,6 +17,7 @@ if (!isset($_SESSION["login"])) {
 if (isset($_SESSION["login"])) {
     $id = $_SESSION["login"];
 }
+include '../components/function.php';
 ?>
 
 
@@ -31,11 +32,12 @@ if (isset($_SESSION["login"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0"></script>
     <link href="../sweetalert/dist/sweetalert2.all.min.js" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../app.css">
+    <link rel="stylesheet" href="../app.css">
 </head>
 
 <body>
     <?php
     include "../components/navbar.php";
     include "../components/sidebar.php";
+    include "../components/notification.php";
     ?>

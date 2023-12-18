@@ -12,38 +12,22 @@
                     <h5>Nama</h5>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
                     <a class="nav-link active" href="dashboard.php">
-=======
-                    <a class="nav-link active" href="#">
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
                         <i class="fas fa-tachometer-alt"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
                     <a class="nav-link" href="tblproduk.php">
-=======
-                    <a class="nav-link" href="#">
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
                         <i class="fas fa-box-open"></i> Produk
                     </a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
                     <a class="nav-link" href="tblpelanggan.php">
-=======
-                    <a class="nav-link" href="#">
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
                         <i class="fas fa-users"></i> Pelanggan
                     </a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
                     <a class="nav-link" href="tbltransaksi.php">
-=======
-                    <a class="nav-link" href="#">
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
                         <i class="fas fa-money-bill-wave"></i> Transaksi
                     </a>
                 </li>
@@ -53,20 +37,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
                     <a class="nav-link" href="tblpesan.php">
-=======
-                    <a class="nav-link" href="#">
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
                         <i class="fas fa-envelope"></i> Pesan
                     </a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
                     <a class="nav-link" href="tblaktivitas.php">
-=======
-                    <a class="nav-link" href="#">
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
                         <i class="fas fa-chart-line"></i> Aktivitas
                     </a>
                 </li>
@@ -76,11 +52,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
                     <a class="nav-link" href="tbladmin.php">
-=======
-                    <a class="nav-link" href="#">
->>>>>>> ff4b382fda4a1320b44ed3f5b66288ac99f66449
                         <i class="fas fa-user-cog"></i> Admin
                     </a>
                 </li>
